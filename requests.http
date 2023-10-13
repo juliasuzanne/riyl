@@ -1,0 +1,27 @@
+
+### post index
+GET http://localhost:3000/infos.json
+
+#### post show
+GET http://localhost:3000/infos/1.json
+
+### post create
+POST http://localhost:3000/infos.json
+Content-Type: application/json
+
+{
+  "photo_url": "September 13th, 2023",
+  "title": "Week Three",
+  "category": "category",
+  "favoritepart": "Favorite part",
+  "author": "Lewis Carroll"
+}
+
+### patch post
+PATCH http://localhost:3000/infos/1.json
+Content-Type: application/json
+
+{
+  "title": "title"
+}
+

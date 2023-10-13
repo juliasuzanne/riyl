@@ -26,7 +26,7 @@ class InfosController < ApplicationController
   end
 
   def update
-    info = Info.find(params { :id })
+    info = Info.find_by(id: params[:id])
     info[:photo_url] = params[:photo_url] || info[:photo_url]
     info[:author] = params[:author] || info[:author]
     info[:favoritepart] = params[:favoritepart] || info[:favoritepart]
