@@ -27,11 +27,14 @@ class InfosController < ApplicationController
 
   def update
     info = Info.find_by(id: params[:id])
-    info[:photo_url] = params[:photo_url] || info[:photo_url]
-    info[:author] = params[:author] || info[:author]
-    info[:favoritepart] = params[:favoritepart] || info[:favoritepart]
-    info[:title] = params[:title] || info[:title]
-    info[:category] = params[:category] || info[:category]
+
+    info.update(
+      photo_url: params[:photo_url] || info.photo_url,
+      author: params[:author] || info.author,
+      favoritepart: params[:favoritepart] || info.favoritepart,
+      title: params[:title] || info.title,
+      category: params[:category] || info.category,
+    )
     render json: info.as_json
   end
 
